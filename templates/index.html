@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers Quiz</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="quiz">
+        <div class="logo">
+            <img src="{% static 'images/Avenger logo.jpg' %}" alt="Avengers"height="100px" width="150px">
+        </div>
+        <div class="find">
+            <h1>FIND OUT!!!</h1>
+        </div>
+        <div class="des">
+            <h2>Which Avenger are you???</h2>
+        </div>
+        <div class="name">
+            <form action="start" method="POST">
+                {% csrf_token %}
+                <input type="text" name="name" id="name" placeholder="Enter your name here" >
+                <input type="submit" name="submit" id="submit" value="Start Quiz">
+            </form>
+        </div>
+        <div class="logos">
+            <div class="share">
+                <h3>Share this quiz on</h3>
+            </div>
+            <div class="tags">
+              <img src="{% static 'images/Facebook logo.jpg' %}" alt="facebook" height="50px" width="50px">
+              <img src="{% static 'images/Twitter logo.jpg' %}" alt="Twitter"height="50px" width="50px">
+              <img src="{% static 'images/instagram logo.jpg' %}" alt="Instagram"height="50px" width="50px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

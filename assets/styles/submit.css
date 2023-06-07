@@ -1,0 +1,43 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.result{
+    margin:70px 300px 50px 300px;
+    border-style: solid;
+    background-color:rgba(201, 236, 31, 0.5);
+}
+.name{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color:maroon
+}
+.pic {
+    display:grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0px;
+}
+.pic img{
+    margin-left: 20px;
+}
+.pic p{
+    font-size: 20px;
+    color:chocolate;
+    margin-right: 30px;
+}
+input{
+    margin-top:30px;
+    margin-left:300px;
+    padding:5px;
+    background-color: darkkhaki;
+    margin-bottom: 50px;
+}

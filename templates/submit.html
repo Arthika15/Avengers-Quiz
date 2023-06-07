@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'styles/submit.css' %}">
+</head>
+<body>
+    <div class="result">
+        <div class="name">
+            <h2> {{avenger.avengername}}</h2>
+        </div>
+        <div class="pic">
+            <img src="{{avenger.avengerimg.url}}" alt="{{avenger.avengername}}" width="250px" height="200px">
+            <p>{{avenger.avengerdes}}</p>
+        </div>
+        <form action="index">
+            <input type="submit" name="submit" value="Back to home">
+        </form>
+        </div>
+    </div>
+</body>
+</html>

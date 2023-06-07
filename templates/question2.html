@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'styles/question.css' %}">
+    <script>
+        function validate(){
+            var valid=false;
+            var x = document.check.questions2;
+            for(var i=0;i<x.length;i++){
+                if(x[i].checked){
+                    valid=true;
+                    break;
+                }
+            }
+            if(valid==false){
+                alert("please enter the answer");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container1">
+    <div class="main">
+    {% for i in quizquestions %}
+    <form  name="check" action="next2" method="POST" onsubmit="return validate()">
+    {% csrf_token %}
+    <h3>&nbsp{{i.id}}. {{i.question}}</h3>
+    <input type="radio" id="option1" name="questions{{i.id}}" value="{{i.option1points}}">
+    <label for="option1">{{i.option1}}</label><br>
+    <input type="radio" id="option2" name="questions{{i.id}}" value="{{i.option2points}}">
+    <label for="option2">{{i.option2}}</label><br>
+    <input type="radio" id="option3" name="questions{{i.id}}" value="{{i.option3points}}">
+    <label for="option3">{{i.option3}}</label><br>
+    <input type="radio" id="option4" name="questions{{i.id}}" value="{{i.option4points}}">
+    <label for="option4">{{i.option4}}</label><br>
+    {% endfor %}
+    <input type="submit"  name="next2" id="next" value="Next" >
+    </form>
+    </div>
+</div>
+</body>
+</html>
